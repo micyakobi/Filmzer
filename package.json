@@ -1,0 +1,31 @@
+{
+  "name": "Filmzer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd server && npm start",
+    "user": "cd client\\user && npm start",
+    "admin": "cd client\\admin && npm start",
+    "dev": "concurrently \"npm run server\" \"npm run user\" \"npm run admin\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leelavy/Filmzer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leelavy/Filmzer/issues"
+  },
+  "homepage": "https://github.com/Leelavy/Filmzer#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "d3": "^6.1.1",
+    "node-sass": "^4.14.1",
+    "react-slick": "^0.28.0",
+    "rxjs-compat": "^6.6.3"
+  }
+}

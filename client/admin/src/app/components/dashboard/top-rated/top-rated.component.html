@@ -1,0 +1,47 @@
+
+<div class="iq-card">
+    <div class="iq-card-header d-flex justify-content-between align-items-center">
+        <div class="iq-header-title">
+            <h4 class="card-title">Chat</h4>
+        </div>
+        <div id="top-rated-item-slick-arrow" class="slick-aerrow-block"></div>
+    </div>
+
+    <div class="iq-card-body">
+        <form action="movie-view.html">
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="chatbox">
+                            <div class="col form-group">
+
+                                <div *ngFor="let item of messageArray">
+                                    <span><strong>{{item.user}}:</strong> {{item.message}} </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-10 form-group" style="display: flex;">
+
+                            <input [(ngModel)]="messageText" [ngModelOptions]="{standalone: true}" type="text"
+                                class="form-control" placeholder="Write your message here">
+                            <div class="">
+                                <button (click)="sendMessage()" style="margin:5px;" type="submit"
+                                    class="btn btn-primary">Send</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+</div>

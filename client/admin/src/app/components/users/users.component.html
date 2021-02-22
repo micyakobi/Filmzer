@@ -1,0 +1,101 @@
+<router-outlet></router-outlet>
+
+<!doctype html>
+<html lang="en">
+
+<body>
+
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="iq-card">
+                            <div class="iq-card-header d-flex justify-content-between">
+                                <div class="iq-header-title">
+                                    <h4 class="card-title">User Lists</h4>
+                                </div>
+                                <div class="iq-card-header-toolbar d-flex align-items-center">
+                                    <nav>
+                                        <a routerLink="/addUser" class="btn btn-primary">Add user</a>
+                                    </nav>
+                                </div>
+                            </div>
+
+                      
+
+                            <div class="search-container">
+                                <form  class="searchbox">
+
+                                    <i class="ri-search-line"></i>
+                                    <input style="margin:10px;" [(ngModel)]="searchU" [ngModelOptions]="{standalone: true}"  (input)="searchUser()"
+                                     type="text" class="text search-input" placeholder="by user-name..." >
+                                    <i class="ri-search-line"></i>
+                                    <input style="margin:10px;" [(ngModel)]="searchF" [ngModelOptions]="{standalone: true}" (input)="searchUser()"
+                                    type="text" class="text search-input" placeholder="by first-name...">
+                                    <i class="ri-search-line"></i>
+                                    <input style="margin:10px;" [(ngModel)]="searchL" [ngModelOptions]="{standalone: true}" (input)="searchUser()"
+                                    type="text" class="text search-input" placeholder="by last-name...">
+                                    <i class="ri-search-line"></i>
+                                    <input style="margin:10px;" [(ngModel)]="searchE" [ngModelOptions]="{standalone: true}" (input)="searchUser()"
+                                    type="text" class="text search-input" placeholder="by email...">
+                                
+                                </form>
+                            </div>
+
+
+
+                            <div class="iq-card-body">
+                                <div class="table-view">
+                                    <!-- data-tables  -->
+                                    <table class="table movie_table" style="width:100%">
+                                        <thead>
+                                            <tr>
+
+                                                <th style="width: 10%;"> First-Name</th>
+                                                <th style="width: 10%;"> Last-Name</th>
+                                                <th style="width: 10%;"> User-Name</th>
+                                                <th style="width: 20%;"> Email</th>
+                                                <th style="width: 10%;"> Passwors</th>
+                                                <th style="width: 10%;"> IsManager</th>
+                                                <th style="width: 10%;"> Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr *ngFor="let users of users ">   
+                                                <td>{{users.firstName}}</td>
+                                                <td>{{users.lastName}}</td>
+                                                <td>{{users.username}}</td>
+                                                <td>{{users.email}}</td>
+                                                <td>{{users.password}}</td>
+                                                <td>{{users.admin}}</td>
+                                                <td>
+                                                    <div class="flex align-items-center list-user-action">
+                                                        <a class="iq-bg-success" data-toggle="tooltip"
+                                                            data-placement="top" type="button" title="Edit" data-original-title="Edit"
+                                                           (click)="editUs(users._id)"><i class="ri-pencil-line"></i></a>
+                                                            
+                                                        <a class="iq-bg-primary" data-toggle="tooltip"
+                                                            data-placement="top" title="Delete" type="button" data-original-title="Delete"
+                                                           (click)="onDelete(users._id)"><i class="ri-delete-bin-line"></i></a>
+                                                           
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

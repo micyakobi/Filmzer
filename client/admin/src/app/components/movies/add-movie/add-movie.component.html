@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="iq-card">
+                            <div class="iq-card-header d-flex justify-content-between">
+                                <div class="iq-header-title">
+                                    <h4 class="card-title">Add Movie </h4>
+                                </div>
+                            </div>
+                            <div class="iq-card-body">
+                                <form action="movie-view.html">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <div class="row">
+                                                <div class="col-12 form-group">
+                                                    <input #inpTitle type="text" class="form-control" placeholder="Title">
+                                                </div>
+                                                <div class="col-sm-6 form-group">
+                                                    <input #inpYear type="text" class="form-control" placeholder="Release year">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <select #inpCat class="form-control" id="exampleFormControlSelect1">                                          
+                                                        <option>Comedy</option>
+                                                        <option>Crime</option>
+                                                        <option>Action</option>
+                                                        <option>Thriller</option>
+                                                        <option>Science Fiction</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-12 form-group">
+                                                    <textarea #inpVid id="text" name="text" rows="5" class="form-control"
+                                                        placeholder="Upload-Movie"></textarea>
+                                                </div>
+                                                
+                                                <div class="col-12 form-group">
+                                                    <input #inpImage type="text" class="form-control" placeholder="Upload-Image">  
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="d-block position-relative">
+                                                <textarea #inpDesc id="text" name="text" rows="13" class="form-control"
+                                                        placeholder="Description"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  style="display: flex; justify-content: space-between;">
+
+                                        <div>
+                                            <button style="margin:5px;"
+                                             (click)="createMovie(inpTitle.value, inpYear.value, inpCat.value, 
+                                            inpDesc.value, inpImage.value , inpVid.value )" type="submit" class="btn btn-primary">Submit</button>
+                                            <button style="margin:5px;"  type="reset" class="btn btn-danger">Clear</button>
+                                        </div>
+                                        <div>
+                                            <button routerLink="/movies" style="margin:5px;" type="submit"
+                                                class="btn btn-primary">Back</button>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

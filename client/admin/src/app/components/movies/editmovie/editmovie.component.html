@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="iq-card">
+                            <div class="iq-card-header d-flex justify-content-between">
+                                <div class="iq-header-title">
+                                    <h4 class="card-title">Edit Movie </h4>
+                                </div>
+                            </div>
+                            <div class="iq-card-body">
+                                <form action="movie-view.html">
+                                    <div class="row">
+                                        <div class="col-lg-7">
+                                            <div class="row">
+                                                <div class="col-12 form-group">
+                                                    <input #inpTitle type="text" class="form-control"
+                                                        [(ngModel)]="movies.title"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                </div>
+
+                                                <div class="col-sm-6 form-group">
+                                                    <input #inpYear type="text" class="form-control"
+                                                        [(ngModel)]="movies.year" [ngModelOptions]="{standalone: true}">
+                                                </div>
+
+                                                <div class="col-md-6 form-group">
+                                                    <select #inpCat class="form-control" id="exampleFormControlSelect1"
+                                                        [(ngModel)]="inpCat.value"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                        <option>Comedy</option>
+                                                        <option>Crime</option>
+                                                        <option>Drama</option>
+                                                        <option>Horror</option>
+                                                        <option>Romance</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-12 form-group">
+                                                    <textarea #inpMovie type="text" rows="3" class="form-control"
+                                                        [(ngModel)]="movies.trailer_video"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                    </textarea>
+                                                </div>
+                                                <div class="col-12 form-group">
+                                                    <textarea #inpImage type="text" rows="3" class="form-control"
+                                                        [(ngModel)]="movies.image_url"
+                                                        [ngModelOptions]="{standalone: true}">
+                                                    </textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5">
+                                            <div class="d-block position-relative">
+                                                <textarea #inpDesc id="text" name="text" rows="13" class="form-control"
+                                                    [(ngModel)]="movies.description"
+                                                    [ngModelOptions]="{standalone: true}"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex; justify-content: space-between;">
+
+                                        <div>
+                                            <button style="margin:5px;" (click)="updateMovie(inpTitle.value, inpYear.value, inpCat.value, 
+                                            inpDesc.value, inpImage.value, inpMovie.value)" (click)="alert()"
+                                                type="submit" class="btn btn-primary">Submit</button>
+                                            <button style="margin:5px;" type="reset"
+                                                class="btn btn-danger">Clear</button>
+                                        </div>
+
+                                        <div>
+                                            <button routerLink="/movies" style="margin:5px;" type="submit"
+                                                class="btn btn-primary">Back</button>
+                                        </div>
+
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

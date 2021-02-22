@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<body>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <div id="content-page" class="content-page">
+            <div class="container-fluid">
+                <div class="row">
+
+
+                    <div class="col-lg-12">
+                        <div class="iq-edit-list-data">
+                            <div class="tab-content">
+                                <div class="tab-pane fade active show" id="personal-information" role="tabpanel">
+                                    <div class="iq-card">
+                                        <div class="iq-card-header d-flex justify-content-between">
+                                            <div class="iq-header-title">
+                                                <h4 class="card-title">Personal Information </h4>
+                                            </div>
+                                        </div>
+                                        <div class="iq-card-body">
+                                            <form>
+
+                                                <div class=" row align-items-center">
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="fname">First Name:</label>
+                                                        <input #inpF type="text" class="form-control"
+                                                            [(ngModel)]="user.firstName"
+                                                            [ngModelOptions]="{standalone: true}">
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="lname">Last Name: </label>
+                                                        <input #inpL type="text" class="form-control"
+                                                            [(ngModel)]="user.lastName"
+                                                            [ngModelOptions]="{standalone: true}">
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="uname">User Name: </label>
+                                                        <input #inpU type="text" class="form-control"
+                                                            [(ngModel)]="user.username"
+                                                            [ngModelOptions]="{standalone: true}">
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="npass"> Password:</label>
+                                                        <input #inpP type="text" class="form-control"
+                                                            [(ngModel)]="user.password"
+                                                            [ngModelOptions]="{standalone: true}">
+                                                    </div>
+                                                    <div class="form-group col-sm-6">
+                                                        <label for="email">Email Id:</label>
+                                                        <input #inpE type="email" class="form-control"
+                                                            [(ngModel)]="user.email"
+                                                            [ngModelOptions]="{standalone: true}">
+                                                    </div>
+
+
+
+                                                    <div class="form-group col-sm-6">
+                                                        <label class="d-block">Admin: </label>
+
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input #inpA type="radio" id="customRadio6"
+                                                                name="customRadio1" class="custom-control-input"
+                                                                value="true" [(ngModel)]="inpA.value"
+                                                                [ngModelOptions]="{standalone: true}">
+                                                            <label class="custom-control-label" for="customRadio6"> true
+                                                            </label>
+                                                        </div>
+
+                                                        <div class="custom-control custom-radio custom-control-inline">
+                                                            <input #inpA type="radio" id="customRadio7"
+                                                                name="customRadio1" class="custom-control-input"
+                                                                value="false" [(ngModel)]="inpA.value"
+                                                                [ngModelOptions]="{standalone: true}">
+                                                            <label class="custom-control-label" for="customRadio7">
+                                                                false </label>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div style="display: flex; justify-content: space-between;">
+
+                                                    <div>
+                                                        <button style="margin:5px;" (click)="alert()"
+                                                            (click)="updateUser(inpU.value,inpP.value, inpA.value, inpF.value, inpL.value,  inpE.value)"
+                                                            type="submit" class="btn btn-primary mr-2">Submit</button>
+                                                        <button type="reset" class="btn btn-danger">Clear</button>
+                                                    </div>
+                                                    <div>
+                                                        <button routerLink="/users" style="margin:5px;" type="submit"
+                                                            class="btn btn-primary">Back</button>
+                                                    </div>
+
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

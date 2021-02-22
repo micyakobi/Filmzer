@@ -1,0 +1,99 @@
+<router-outlet></router-outlet>
+
+<!doctype html>
+<html lang="en">
+
+
+<div class="wrapper">
+    <div id="content-page" class="content-page">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="iq-card">
+                        <div class="iq-card-header d-flex justify-content-between">
+                            <div class="iq-header-title">
+                                <h4 class="card-title">Movie Lists</h4>
+                            </div>
+                            <div class="iq-card-header-toolbar d-flex align-items-center">
+                                <input [(ngModel)]="scrape"  [ngModelOptions]="{standalone: true}"  
+                                 type="text" class="text search-input" placeholder="Scrape...">
+                                <nav>
+                                    <a style="margin:5px;" (click)="scrapeMovie()" class="btn btn-primary">Scrape</a>
+                                </nav>
+                                <nav>
+                                    <a style="margin:5px;" routerLink="/groupByMovie" class="btn btn-primary">Group-by</a>
+                                </nav>
+                                <nav>
+                                    <a style="margin:5px;" routerLink="/addMovie" class="btn btn-primary">Add movie</a>
+                                </nav>
+                                
+                            </div>
+                        </div>
+
+                        <div class="ml-auto search-container">
+                            <form  class="searchbox">
+
+                                <i class="ri-search-line"></i>
+                                <input style="margin:10px;" [(ngModel)]="movieM" [ngModelOptions]="{standalone: true}"  (input)="searchMovie()"
+                                 type="text" class="text search-input" placeholder="by movie...">
+                                <i class="ri-search-line"></i>
+                                <input style="margin:10px;" [(ngModel)]="movieC" [ngModelOptions]="{standalone: true}"  (input)="searchMovie()"
+                                 type="text" class="text search-input" placeholder="by category...">
+                                <i class="ri-search-line"></i>
+                                <input style="margin:10px;" [(ngModel)]="movieY" [ngModelOptions]="{standalone: true}"  (input)="searchMovie()"
+                                 type="text" class="text search-input" placeholder="by year...">
+                            
+                            </form>
+                        </div>
+
+                        <div class="iq-card-body">
+                            <div class="table-view">
+                                <!-- data-tables  -->
+                                <table class="table movie_table " style="width:100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 20%;">Movie</th>
+                                            <th>Category</th>
+                                            <th>Release Year</th>
+                                            <th style="width: 20%;">Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody
+                                    >
+                                        <tr *ngFor="let movies of movies">
+                                            <td> {{ movies.title }} </td>
+                                            <td> {{ movies.genre }} </td>
+                                            <td> {{ movies.year }} </td>
+                                            <td> {{ movies.description | slice:0:120 }}... </td>
+                                            
+                                            <td>
+                                                <div class="flex align-items-center list-user-action">
+                                                    <!-- <a class="iq-bg-warning" data-toggle="tooltip" data-placement="top"
+                                                        title="" data-original-title="View" href="#"><i
+                                                            class="lar la-eye"></i></a>
+                                                             -->
+                                                    <a class="iq-bg-success" data-toggle="tooltip" data-placement="top"
+                                                        type="button"  title="Edit" data-original-title="Edit" 
+                                                        (click)="editMov(movies._id, users)" >
+                                                        <i class="ri-pencil-line"></i></a>
+
+                                                    <a class="iq-bg-primary" data-toggle="tooltip" data-placement="top"
+                                                        type="button" title="Delete" data-original-title="Delete" 
+                                                        (click)="onDelete(movies._id)"><i class="ri-delete-bin-line"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
